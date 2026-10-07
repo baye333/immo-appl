@@ -1,0 +1,23 @@
+#ce fichier de application est utilisé pour déployer immo-app sur le cluster k8s avec argocd c'est à dire 
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: immo-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/baye333/immo-appl.git
+    targetRevision: main
+    path: k8s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: immo-app
+  syncPolicy:
+    automated:
+      prune: true        # supprime les ressources retirées de Git
+      selfHeal: true     # annule les modifications manuelles faites sur le cluster
+    syncOptions:
+      - CreateNamespace=true
+  revisionHistoryLimit: 10
