@@ -43,7 +43,7 @@ pipeline {
         }
 
         // ── 3 : lire la version dans le fichier VERSION ───────────
-        stage('Lire la version') {
+        stage('Read Version') {
             when { expression { env.SKIP_BUILD != 'true' } }
             steps {
                 script {
