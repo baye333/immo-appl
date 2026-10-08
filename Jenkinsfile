@@ -9,7 +9,8 @@ pipeline {
 
     // Pas de webhook possible vers une IP privée : Jenkins interroge GitHub toutes les ~2 minutes.
     triggers {
-        pollSCM('H/2 * * * *')
+        githubPush()
+        pollSCM('H H/6 * * *')   // filet de sécurité si le webhook est coupé
     }
 
     environment {
