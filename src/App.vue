@@ -66,7 +66,7 @@ function resetFilters() {
 <template>
   <header class="site-header">
     <h1 class="brand">Immo</h1>
-    <p class="tagline">Trouvez un logement à acheter ou à louer.</p>
+    <p class="tagline">Trouvez un logement à acheter ou à louer  au plus proche de chez vous</p>
   </header>
 
   <main class="layout">
