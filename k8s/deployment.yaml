@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: immo-app
-          image: bayelahad/immo-app:1.0.4
+          image: bayelahad/immo-app:1.0.5
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
